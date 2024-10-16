@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  avl-tree:
+    build: .
+    container_name: avl-tree-container
+    command: node dist/app.js
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - "mysql"
