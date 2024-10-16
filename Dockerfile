@@ -1,23 +1,18 @@
-# Use an official Node.js image as the base image
+# Use an official Node.js image
 FROM node:18
 
 # Set the working directory
 WORKDIR /usr/src/app
 
-# Copy the package.json and package-lock.json files
+# Copy package.json and install dependencies
 COPY package*.json ./
-
-# Install dependencies
 RUN npm install
 
-# Copy the rest of the application code
+# Copy all project files
 COPY . .
 
 # Compile TypeScript to JavaScript
-RUN npx tsc
+RUN npm run build
 
-# Command to run the compiled app
-CMD ["node", "--expose-gc", "dist/app.js"]
-FROM ubuntu:latest
-
-ENTRYPOINT ["top", "-b"]
+# Set the default command to run the application
+CMD ["node", "dist/app.js"]

@@ -6,7 +6,8 @@
 - Profile space usage ( Confirm that you see O (n) )
 - Profile time consumption ( Confirm that you see O (log n))
 
-A **Balanced Binary Search Tree (BBST)** is a type of binary search tree (BST) that automatically maintains its balance to
+A **Balanced Binary Search Tree (BBST)** is a type of binary search tree (BST) that automatically maintains its balance
+to
 ensure efficient operations. In a standard BST, the height of the tree can grow up to O(n) in the worst case (when
 elements are inserted sequentially), leading to degraded performance for operations like insertion, search, and
 deletion.
@@ -65,6 +66,12 @@ Example
 http://localhost:8080/profile/insert?length=50000
 ````
 
+or
+
+````bash
+curl "http://localhost:8080/profile/insert?length=50000"
+````
+
 ### Delete
 
 - URL: /profile/delete
@@ -78,6 +85,12 @@ Example
 http://localhost:8080/profile/delete?length=50000
 ````
 
+or
+
+````bash
+curl "http://localhost:8080/profile/delete?length=50000"
+````
+
 ### Search
 
 - URL: /profile/search
@@ -89,6 +102,12 @@ Example
 
 ````bash
 http://localhost:8080/profile/search?length=50000
+````
+
+or
+
+````bash
+curl "http://localhost:8080/profile/search?length=50000"
 ````
 
 ## Profiling
